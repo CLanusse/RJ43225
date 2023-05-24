@@ -1,28 +1,21 @@
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
-import { Tutores } from './Tutores'
-// import { Profe } from './Profe'
-// import { despedirse, saludar } from './Utilidades.js'
-// import abc from './Utilidades.js'
+import { Usuario } from "./components/Usuario"
+import { Clicker } from "./ejemplos/Clicker"
 
 function App() {
-  // saludar()
-  // despedirse()
+
   
   return (
     <div>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo"/>
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
+      <h2>React JS</h2>
+      <hr/>
 
-      {/* <Profe /> */}
-      <Tutores />
+      <Clicker init={15} step={5}/>
+      {/* <Clicker init={50} step={2}/>
+      <Clicker /> */}
+
+      {/* <Usuario nombre="Lucia Dias" curso="Javascript" edad={21} estado="Activo" rol="Tutor"/>
+      <Usuario nombre="Lautaro Zalazar" curso="React" edad={24} estado="Inactivo" rol="Estudiante"/>
+      <Usuario nombre={profe.nombre} curso={profe.curso} edad={profe.edad} estado="Activo" rol={profe.rol}/> */}
     </div>
     
   )
