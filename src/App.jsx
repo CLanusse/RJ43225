@@ -2,21 +2,30 @@ import Header from "./components/Header/Header"
 import ItemListContainer from "./components/ItemListContainer/ItemListContainer"
 import 'bootstrap/dist/css/bootstrap.min.css'
 import { Button } from "react-bootstrap"
+import MiContenedor from "./ejemplos/MiContenedor"
+import MiBoton from "./ejemplos/MiBoton/MiBoton"
+import { Clicker2 } from "./ejemplos/Clicker2"
+import Nosotros from "./ejemplos/Nosotros"
+import { useEffect, useState } from "react"
 
 function App() {
 
-  const clickear = () => console.log("Hola mundo!")
-  
+  const [mostrar, setMostrar] = useState(true)
+
+  const handleMostrar = () => {
+    setMostrar(!mostrar)
+  }
+
   return (
     <div>
       <Header />
-      <ItemListContainer mensaje="Hola mundo!"/>
 
-      <div className="container">
-        <Button onClick={clickear} size="lg" variant="warning">Click me</Button>
-        <Button variant="success">Click me</Button>
-        <Button size="sm" variant="danger">Click me</Button>
-      </div>
+      <button onClick={handleMostrar}>Mostrar</button>
+
+      {
+        mostrar ? <Clicker2 /> : null
+      }
+
     </div>
    
   )
