@@ -41,5 +41,12 @@
         "descripcion": "Lorem ipsum asf lkjf",
         "precio": 6500,
         "img": "https://dummyimage.com/200x200/000/fff"
+    },
+    {
+        "id": 7,
+        "nombre": "Producto 7",
+        "descripcion": "Lorem ipsum asf lkjf",
+        "precio": 7500,
+        "img": "https://dummyimage.com/200x200/000/fff"
     }
 ]
