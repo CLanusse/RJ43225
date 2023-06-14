@@ -1,18 +1,21 @@
 import './Header.scss'
 import logo from '../../assets/react.svg'
+import { Link } from 'react-router-dom'
 
-const Header = () => {
+const Header = ({variant = false}) => {
 
     return (
-        <header className="header">
+        <header className={variant ? "header header-v" : "header"}>
             <div className="header__container">
                 {/* <img src='/img/vite.svg' alt='logo'/> */}
                 <img src={logo} alt='logo'/>
 
                 <nav className="header__nav">
-                    <a className="header__link" href="#">Enlace 1</a>
-                    <a className="header__link" href="#">Enlace 2</a>
-                    <a className="header__link" href="#">Enlace 3</a>
+                    <Link className="header__link" to="/">Inicio</Link>
+                    <Link className="header__link" to="/productos/panaderia">Panaderia</Link>
+                    <Link className="header__link" to="/productos/carniceria">Carniceria</Link>
+                    <Link className="header__link" to="/productos/perfumeria">Perfumeria</Link>
+                    <Link className="header__link" to="/productos/verduleria">Verduleria</Link>
                 </nav>
             </div>
         </header>

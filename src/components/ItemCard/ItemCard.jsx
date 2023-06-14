@@ -1,4 +1,4 @@
-
+import { Link } from "react-router-dom"
 
 
 // const ItemCard = ({item}) => {
@@ -10,7 +10,7 @@ const ItemCard = ({id, nombre, precio, descripcion, img}) => {
             <img src={img} alt={nombre}/>
             <p>{descripcion}</p>
             <p>Precio: ${precio}</p>
-            <button className="btn btn-primary">Ver más</button>
+            <Link className="btn btn-primary" to={`/detail/${id}`}>Ver más</Link>
         </div>
     )
 }
