@@ -16,6 +16,7 @@ const Header = ({variant = false}) => {
                     <Link className="header__link" to="/productos/carniceria">Carniceria</Link>
                     <Link className="header__link" to="/productos/perfumeria">Perfumeria</Link>
                     <Link className="header__link" to="/productos/verduleria">Verduleria</Link>
+                    <Link className="header__link" to="/nosotros">Nosotros</Link>
                 </nav>
             </div>
         </header>

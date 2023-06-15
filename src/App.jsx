@@ -14,10 +14,7 @@ function App() {
 
     <BrowserRouter>
 
-        <Routes>
-          <Route path="/pokeapi" element={<Header variant/>}/>
-          <Route path="*" element={<Header />}/>
-        </Routes>
+        <Header />
      
         <Routes>
           <Route path="/" element={<ItemListContainer />} />
