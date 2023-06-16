@@ -1,6 +1,7 @@
 import { useState } from "react"
 import ItemCount from "../ItemCount/ItemCount"
 import SelectTalle from "../SelectTalle/SelectTalle"
+import { Link, useNavigate } from "react-router-dom"
 
 
 
@@ -23,6 +24,8 @@ const ItemDetail = ({id, nombre, precio, category, descripcion, img, stock}) => 
     const [cantidad, setCantidad] = useState(1)
     const [talle, setTalle] = useState(null)
 
+    const navigate = useNavigate()
+
     const handleAgregar = () => {
         const item = {
             id, 
@@ -39,6 +42,10 @@ const ItemDetail = ({id, nombre, precio, category, descripcion, img, stock}) => 
     }
 
     
+    const handleVolver = () => {
+        navigate(-1)
+    }
+
 
     return (
         <div className="container my-5">
@@ -62,6 +69,9 @@ const ItemDetail = ({id, nombre, precio, category, descripcion, img, stock}) => 
                 setCantidad={setCantidad}
                 handleAgregar={handleAgregar}
             />
+
+            <hr/>
+            <button onClick={handleVolver} className="btn btn-primary">Volver</button>
         </div>
     )
 }

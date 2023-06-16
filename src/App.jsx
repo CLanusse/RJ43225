@@ -23,8 +23,8 @@ function App() {
           <Route path="/nosotros" element={<Nosotros />} />
           <Route path="/contacto" element={<Contacto />} />
           <Route path="/pokeapi" element={<PokeApi />} />
-          <Route path="*" element={ <Navigate to={"/"}/>}/>
-          {/* <Route path="*" element={ <Error404 />}/> */}
+          {/* <Route path="*" element={ <Navigate to={"/"}/>}/> */}
+          <Route path="*" element={ <Error404 />}/>
         </Routes>
 
         {/* <Footer /> */}
