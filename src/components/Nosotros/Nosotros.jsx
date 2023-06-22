@@ -1,8 +1,8 @@
 import { useEffect } from "react"
 import useMobile from "../../hooks/useMobile"
 
-
 const Nosotros = () => {
+  
     const isMobile = useMobile()
 
     const clickear = (e) => {

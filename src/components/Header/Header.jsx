@@ -2,6 +2,7 @@ import './Header.scss'
 import logo from '../../assets/react.svg'
 import { Link } from 'react-router-dom'
 import Buscador from '../../ejemplos/Buscador'
+import CartWidget from '../CartWidget/CartWidget'
 
 const Header = ({variant = false}) => {
 
@@ -19,6 +20,7 @@ const Header = ({variant = false}) => {
                     <Link className="header__link" to="/productos/verduleria">Verduleria</Link>
                     <Link className="header__link" to="/nosotros">Nosotros</Link>
                 </nav>
+                <CartWidget />
             </div>
             <Buscador />
         </header>

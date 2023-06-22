@@ -1,29 +1,15 @@
-import { useState } from "react"
+import { useContext, useState } from "react"
 import ItemCount from "../ItemCount/ItemCount"
-import SelectTalle from "../SelectTalle/SelectTalle"
 import { Link, useNavigate } from "react-router-dom"
-
-
-
-const talles = [
-    {
-        value: "XS",
-        label: "Extra Small"
-    },
-    {
-        value: "M",
-        label: "Medium"
-    },
-    {
-        value: "XL",
-        label: "Extra Large"
-    },
-]
+import { CartContext } from "../../context/CartContext"
 
 const ItemDetail = ({id, nombre, precio, category, descripcion, img, stock}) => {
-    const [cantidad, setCantidad] = useState(1)
-    const [talle, setTalle] = useState(null)
 
+    const { agregarAlCarrito, isInCart } = useContext(CartContext)
+
+    console.log( isInCart(id) )
+
+    const [cantidad, setCantidad] = useState(1)
     const navigate = useNavigate()
 
     const handleAgregar = () => {
@@ -35,10 +21,10 @@ const ItemDetail = ({id, nombre, precio, category, descripcion, img, stock}) => 
             descripcion, 
             img, 
             stock, 
-            cantidad, 
-            talle
+            cantidad
         }
-        console.log(item)
+        
+        agregarAlCarrito(item)
     }
 
     
@@ -58,17 +44,16 @@ const ItemDetail = ({id, nombre, precio, category, descripcion, img, stock}) => 
             <br/>
             <small>categoría: {category}</small>
 
-            <SelectTalle 
-                setSelect={setTalle}
-                opciones={talles}
-            />
-
-            <ItemCount 
-                max={stock}
-                cantidad={cantidad}
-                setCantidad={setCantidad}
-                handleAgregar={handleAgregar}
-            />
+            {
+                isInCart(id)
+                    ?   <Link className="btn btn-success" to="/cart">Terminar mi compra</Link>
+                    :   <ItemCount 
+                            max={stock}
+                            cantidad={cantidad}
+                            setCantidad={setCantidad}
+                            handleAgregar={handleAgregar}
+                        />
+            }
 
             <hr/>
             <button onClick={handleVolver} className="btn btn-primary">Volver</button>
