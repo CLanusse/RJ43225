@@ -5,7 +5,6 @@ import Buscador from '../../ejemplos/Buscador'
 import CartWidget from '../CartWidget/CartWidget'
 
 const Header = ({variant = false}) => {
-
     return (
         <header className={variant ? "header header-v" : "header"}>
             <div className="header__container">
@@ -20,6 +19,7 @@ const Header = ({variant = false}) => {
                     <Link className="header__link" to="/productos/verduleria">Verduleria</Link>
                     <Link className="header__link" to="/nosotros">Nosotros</Link>
                 </nav>
+
                 <CartWidget />
             </div>
             <Buscador />

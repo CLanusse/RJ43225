@@ -32,8 +32,8 @@ const ItemListContainer = () => {
 
     const listado = search
                         ? productos.filter(prod => prod.nombre.includes(search))
-                        : productos
-
+                        : productos  
+                        
     return (
         <div className="container my-5">
             {

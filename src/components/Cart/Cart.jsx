@@ -1,14 +1,26 @@
 import { useContext } from "react"
 import { CartContext } from "../../context/CartContext"
 import { FaTrashAlt } from "react-icons/fa"
+import { Link } from "react-router-dom"
 
 
 const Cart = () => {
     const { cart, totalCompra, vaciarCarrito, eliminarDelCarrito } = useContext(CartContext)
 
+    if (cart.length === 0) {
+        return (
+            <div className="container my-5">
+                <h2>Tu carrito está vacío</h2>
+                <hr/>
+                <Link className="btn btn-primary" to="/">Ir a la tienda</Link>
+            </div>
+        )
+    }
+   
 
     return (
         <div className="container my-5">
+
             <h2>Tu compra</h2>
             <hr/>
 

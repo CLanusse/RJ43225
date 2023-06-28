@@ -1,13 +1,12 @@
-import { useContext, useState } from "react"
+import { useContext, useState, useMemo } from "react"
 import ItemCount from "../ItemCount/ItemCount"
 import { Link, useNavigate } from "react-router-dom"
 import { CartContext } from "../../context/CartContext"
+import UnMemo from "../../ejemplos/UnMemo"
 
 const ItemDetail = ({id, nombre, precio, category, descripcion, img, stock}) => {
 
     const { agregarAlCarrito, isInCart } = useContext(CartContext)
-
-    console.log( isInCart(id) )
 
     const [cantidad, setCantidad] = useState(1)
     const navigate = useNavigate()
@@ -32,18 +31,23 @@ const ItemDetail = ({id, nombre, precio, category, descripcion, img, stock}) => 
         navigate(-1)
     }
 
+    const fecha = useMemo(() => new Date().toLocaleString(), [cantidad])
 
     return (
         <div className="container my-5">
             <h2>{nombre}</h2>
 
+            <h4>{fecha}</h4>
+
             <img src={img} alt={nombre}/>
             <p>{descripcion}</p>
-
+ 
             <h4>Precio: ${precio}</h4>
             <br/>
+            <UnMemo />
             <small>categoría: {category}</small>
-
+            <br/>
+        
             {
                 isInCart(id)
                     ?   <Link className="btn btn-success" to="/cart">Terminar mi compra</Link>

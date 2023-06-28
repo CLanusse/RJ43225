@@ -2,7 +2,7 @@ import ItemCard from "../ItemCard/ItemCard"
 
 
 
-const ItemList = ({items}) => {
+const ItemList = ({items = []}) => {
 
     return (
         <div>
