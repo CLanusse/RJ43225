@@ -22,7 +22,7 @@ const Header = ({variant = false}) => {
 
                 <CartWidget />
             </div>
-            <Buscador />
+            {/* <Buscador /> */}
         </header>
     )
 }

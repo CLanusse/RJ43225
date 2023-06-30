@@ -2,7 +2,6 @@ import { useContext, useState, useMemo } from "react"
 import ItemCount from "../ItemCount/ItemCount"
 import { Link, useNavigate } from "react-router-dom"
 import { CartContext } from "../../context/CartContext"
-import UnMemo from "../../ejemplos/UnMemo"
 
 const ItemDetail = ({id, nombre, precio, category, descripcion, img, stock}) => {
 
@@ -44,7 +43,7 @@ const ItemDetail = ({id, nombre, precio, category, descripcion, img, stock}) => 
  
             <h4>Precio: ${precio}</h4>
             <br/>
-            <UnMemo />
+
             <small>categoría: {category}</small>
             <br/>
         

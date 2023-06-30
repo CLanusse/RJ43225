@@ -16,7 +16,7 @@ const ItemCount = ({ max, cantidad, setCantidad, handleAgregar }) => {
             <button 
                 onClick={handleRestar} 
                 // className={cantidad === 1 ? "btn m-2 p-3 btn-outline-danger" : "btn m-2 p-3 btn-outline-primary"}
-                className={`btn m-2 p-3 ${darkMode ? "boton-dark" : ''} ${cantidad === 1 ? "btn-outline-danger": "btn-outline-primary"}`}
+                className={`btn ${darkMode ? "boton-dark" : ''} ${cantidad === 1 ? "btn-outline-danger": "btn-outline-primary"}`}
                 disabled={cantidad === 1}
             >
                 -
