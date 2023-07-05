@@ -31,6 +31,7 @@ const Cart = () => {
                         <img src={prod.img} alt={prod.nombre}/>
                         <p>Precio: ${prod.precio}</p>
                         <p>Cantidad: {prod.cantidad}</p>
+
                         <button 
                             className="btn btn-danger"
                             onClick={() => eliminarDelCarrito(prod.id)}
@@ -46,6 +47,7 @@ const Cart = () => {
                 <h5>Total: ${totalCompra()}</h5>
                 <hr/>
                 <button onClick={vaciarCarrito} className="btn btn-danger">Vaciar carrito</button>
+                <Link className="btn btn-success mx-2" to="/checkout">Terminar mi compra</Link>
             </div>
         </div>
     )
